@@ -1,0 +1,325 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/*whole card css*/
+
+.discount-card {
+    position: relative;
+    padding: 0 0.5em;
+    height: 600px;
+    width: 400px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5em;
+    background: #fff;
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.1),
+        0 6px 20px rgba(0, 0, 0, 0.1);
+
+    transform: translateY(-8px);
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/*header css - title, and line*/
+
+header {
+    position: relative;
+    display: flex;
+    width: 85%;
+    min-height: 8%;
+    align-items: end;
+    justify-content: center;
+}
+
+#divider-line {
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    color: #C8C8C8;
+    z-index: 1;
+    top: 78%;
+}
+
+#card-title {
+    position: absolute;
+    color: #FF6B82;
+    size: 20px;
+    font-weight: 600;
+    line-height: 100%;
+    letter-spacing: 0%;
+    background: #fff;
+    z-index: 8;
+}
+
+/*footer css - total cart value, free delivery text, add to cart button, signature*/
+footer {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.0em;
+
+    .cart-summary {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        #delivery-label {
+            color: #FF6B82;
+            font-size: 14px;
+            font-weight: 500;
+            font-style: Medium;
+        }
+
+        #total-price-label {
+            font-size: 14px;
+            font-weight: 400;
+            font-style: Regular;
+
+        }
+
+    }
+
+    #add-to-cart {
+        width: 100%;
+        height: 40px;
+        background: #FF6B82;
+        color: #fff;
+        font-size: 12px;
+        font-style: Medium;
+        font-weight: 500;
+        border-radius: 4px;
+        border: none;
+        cursor: pointer;
+        transform: translateY(2px);
+    }
+
+    #signature {
+        text-align: right;
+        color: rgba(0, 0, 0, 0.4);
+
+    }
+}
+
+/* css for the main content enclosed in form container*/
+
+form {
+    width: 85%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.price-card {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    padding: 3%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    min-height: 25%;
+    background: #fff;
+    position: relative;
+    justify-content: center;
+    transition: border-color 0.2s, background 0.2s;
+    cursor: pointer;
+}
+
+/*card label MOST POPULAR CSS*/
+
+.card-label {
+    position: absolute;
+    display: inline-flex;
+    right: 0;
+    top: 0;
+    width: 119px;
+    height: 20px;
+    font-size: 10px;
+    font-weight: 700;
+    color: white;
+    align-items: center;
+    border: 1px solid #FF6B82;
+    background-color: #FF6B82;
+    border-radius: 0 0 4px 4px;
+    justify-content: center;
+    line-height: 100%;
+    transform: translate(4px, -9px);
+
+    box-shadow:
+        -4px 4px 6px rgba(0, 0, 0, 0.1),
+        4px 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+.price-card.active {
+
+    border-color: #FF6B82;
+    border-width: 2px;
+    background: #FFF9FA;
+    min-height: 20%;
+}
+
+.price-card.active:has(>.card-label) {
+    padding-top: 30px;
+}
+
+/*css - price card title, offer, current and original price
+        check box outer and inner circle
+*/
+
+.main-content {
+    padding-left: 12%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+    cursor: pointer;
+    position: relative;
+
+    .main-info {
+        display: flex;
+        flex-direction: column;
+        width: 35%;
+        align-items: flex-start;
+        gap: 3px;
+
+        .title-row {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+
+            .unit-title {
+                display: inline-block;
+                font-weight: 600;
+                font-size: 14px;
+                font-style: semi-bold;
+            }
+
+            .discount-badge {
+                display: inline-block;
+                background: #FF6B82;
+                color: white;
+                font-size: 12px;
+                padding: 3px;
+                font-weight: 400;
+                font-style: Regular;
+
+            }
+        }
+
+        .comment {
+            font-size: 12px;
+            font-weight: 400;
+            font-style: Regular;
+        }
+    }
+
+    .price-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        min-width: 110px;
+
+        .price-now {
+            font-weight: 500;
+            font-size: 14px;
+            margin-bottom: 3px;
+            color: #000000;
+        }
+
+        .price-original {
+            color: #ccc;
+            font-size: 10px;
+            font-weight: 400;
+            text-decoration: strike-through;
+        }
+    }
+}
+
+/* to hide the native radio but to keep it accessible */
+.main-content input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Custom outer circle */
+.main-content::before {
+    content: '';
+    position: absolute;
+    left: 9px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    border: 2px solid;
+    border-radius: 50%;
+    box-sizing: border-box;
+    transition: border-color;
+}
+
+.price-card.active .main-content::before {
+    border-color: #FF6B82;
+}
+
+
+.main-content input[type="radio"]:checked+*::after {
+    content: '';
+    position: absolute;
+    left: 13px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background: #FF6B82;
+    border-radius: 50%;
+    border-color: #FF6B82;
+}
+
+/*css - expandable content - table, dropdown*/
+
+.extra-content {
+    display: none;
+    width: 100%;
+    padding-left: 12%;
+
+    table {
+        table-layout: fixed;
+        max-width: 50%;
+        cursor: pointer;
+        th,
+        td {
+            font-size: 10px;
+            font-weight: 400;
+            text-align: left;
+            padding: 2px;
+            width: 1px;
+            select{
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.price-card.active .extra-content {
+    display: block;
+}
