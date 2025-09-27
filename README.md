@@ -1,4 +1,4 @@
-# Proveway Assignment
+# Proveway Assignment - created as per the requirements (using only html, css and vanilla js)
 
 **User Interface Preview**
 
